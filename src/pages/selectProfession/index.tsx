@@ -1,9 +1,10 @@
 import React from "react";
+import { BgSelect } from "../../components/bgSelectProfession";
 
 export const SelectProfession:React.FC = () => {
 	return (
-		<div>
-			<p>1</p>
-		</div>
+		<BgSelect>
+
+		</BgSelect>
 	);
 };
