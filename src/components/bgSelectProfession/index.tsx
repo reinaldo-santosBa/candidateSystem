@@ -1,7 +1,7 @@
 import React from "react";
 import * as S from "./styles";
 import { Container } from "../container";
-// import bg from "../../assets/bgdesktop.jpg";
+
 interface IChildren {
     children: React.ReactNode
 }
