@@ -15,5 +15,6 @@ export const BgOpacity = styled.div`
     height: 100vh;
     background-color: rgba(0,0,0,0.5);
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 `;
