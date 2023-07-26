@@ -1,26 +1,32 @@
+/* eslint-disable linebreak-style */
 import React, { SetStateAction, useEffect, useState } from "react";
 import * as S from "./styles";
 
-interface IStyle {
-	opacity: number;
-	zIndex: number;
+interface IProps {
+	opacity:number;
+	setOpacity: React.Dispatch<SetStateAction<number>>;
+	zIndex:number;
+	setZIndex:React.Dispatch<SetStateAction<number>>;
+	setBtnText: React.Dispatch<SetStateAction<string>>;
 }
 
-interface IConst {
-	stylesContainer: IStyle;
-	setStylesContainer: (value: SetStateAction<IStyle>)=> void;
-
-}
-
-export const ModalSelect: React.FC<IConst> = ({ stylesContainer, setStylesContainer }) => {
+export const ModalSelect: React.FC<IProps> = (
+	{ 
+		opacity,
+		setOpacity,
+		zIndex,
+		setZIndex,
+		setBtnText
+	}
+) => {
 	const arrayProfesesion = [
 		{
 			id: 1,
-			name: "Front - End",
+			name: "Front-End",
 		},
 		{
 			id: 2,
-			name: "Back - End",
+			name: "Back-End",
 		},
 		{
 			id: 3,
@@ -56,11 +62,18 @@ export const ModalSelect: React.FC<IConst> = ({ stylesContainer, setStylesContai
 
 	return (
 		<S.ContainerModal
-			opacity={stylesContainer.opacity}
-			zIndex={stylesContainer.zIndex}
+			opacity={opacity}
+			zIndex={zIndex}
 		>
 			<S.AreaModal>
-				<S.IconClose />
+				<S.IconClose 
+					onClick={
+						()=>{
+							setOpacity(0);
+							setZIndex(-100);
+						}
+					}
+				/>
 				<S.Input
 					type="text"
 					value={profession}
@@ -72,17 +85,14 @@ export const ModalSelect: React.FC<IConst> = ({ stylesContainer, setStylesContai
 							<S.ItemList
 								onClick={
 									() => {
-										if (stylesContainer.opacity === 1) {
-											setStylesContainer({
-												opacity: 0,
-												zIndex: -100
-											});
+										if (opacity === 1) {
+											setOpacity(0);
+											setZIndex(-100);
 										} else {
-											setStylesContainer({
-												opacity: 1,
-												zIndex: 0
-											});
+											setOpacity(1);
+											setZIndex(0);
 										}
+										setBtnText(profession.name);
 									}
 								}
 								key={profession.id}
