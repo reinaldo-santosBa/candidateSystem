@@ -1,6 +1,7 @@
 /* eslint-disable linebreak-style */
-import React, { SetStateAction, useEffect, useState } from "react";
+import React, { SetStateAction, useEffect, useState, useContext } from "react";
 import * as S from "./styles";
+import { AuthContext } from "../../context/context";
 
 interface IProps {
 	opacity:number;
@@ -19,6 +20,10 @@ export const ModalSelect: React.FC<IProps> = (
 		setBtnText
 	}
 ) => {
+	const {
+		setId,
+		setName
+	} = useContext(AuthContext);
 	const arrayProfesesion = [
 		{
 			id: 1,
@@ -88,9 +93,13 @@ export const ModalSelect: React.FC<IProps> = (
 										if (opacity === 1) {
 											setOpacity(0);
 											setZIndex(-100);
+											setId(profession.id);
+											setName(profession.name);
 										} else {
 											setOpacity(1);
 											setZIndex(0);
+											setId(profession.id);
+											setName(profession.name);
 										}
 										setBtnText(profession.name);
 									}
