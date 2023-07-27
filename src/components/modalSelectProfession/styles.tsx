@@ -3,6 +3,7 @@ import { AiOutlineClose } from "react-icons/ai";
 
 interface IModal {
     opacity: number;
+    display: string;
     zIndex: number;
 }
 
@@ -11,7 +12,7 @@ export const ContainerModal = styled.div<IModal>`
     height: 100vh;
     background-color: #00000099;
     position: absolute;
-    display: flex;
+    display: ${props => props.display} !important;
     align-items: center;
     justify-content: center;
     z-index: ${props => props.zIndex};
@@ -21,8 +22,9 @@ export const ContainerModal = styled.div<IModal>`
 
 export const AreaModal = styled.div`
     width: 50vw;
-    height: 70vh;
-    background-color: #e1e1e1;
+    height: auto;
+    padding: 2.3rem 0;
+    background-color: #121212;
     border-radius: 2rem;
     position: relative;
     display: flex;
@@ -32,6 +34,7 @@ export const AreaModal = styled.div`
 
 export const IconClose = styled(AiOutlineClose)`
     position:   absolute;
+    color: #e1e1e1;
     top: 2rem;
     right: 2rem;
     cursor: pointer;
@@ -40,6 +43,8 @@ export const IconClose = styled(AiOutlineClose)`
 
 export const Input = styled.input`
     width: 80%;
+    background-color: #333;
+    color: #e1e1e1;
     height: 3.75rem;
     outline: none;
     border: none;
@@ -50,6 +55,11 @@ export const Input = styled.input`
 
 export const ItemList = styled.p`
     cursor: pointer;
+    color: #e1e1e1;
     font-size: 1.5rem;
     margin-top: 2rem;
+    &&:hover {
+        color: #d1d1d1;
+        font-size: 1.6rem;
+    }
 `;

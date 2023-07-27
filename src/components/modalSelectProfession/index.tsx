@@ -9,15 +9,18 @@ interface IProps {
 	zIndex:number;
 	setZIndex:React.Dispatch<SetStateAction<number>>;
 	setBtnText: React.Dispatch<SetStateAction<string>>;
+	display: string;
+	setDisplay: React.Dispatch<SetStateAction<string>>;
 }
 
 export const ModalSelect: React.FC<IProps> = (
 	{ 
 		opacity,
 		setOpacity,
+		setBtnText,
+		display,
 		zIndex,
-		setZIndex,
-		setBtnText
+		setZIndex
 	}
 ) => {
 	const {
@@ -46,42 +49,45 @@ export const ModalSelect: React.FC<IProps> = (
 			name: "Banco de Talentos"
 		},
 	];
-	const [profession, setProfession] = useState("Digite o processo selectivo");
+	const [profession, setProfession] = useState("");
 	const [professions, setProfessions] = useState(arrayProfesesion);
 	const [professionsSearch,] = useState(arrayProfesesion);
 
 	useEffect(() => {
-		if (profession !== "Digite o processo selectivo") {
+		if (profession !== "") {
 			
 			setProfessions(
 				professionsSearch.filter(item => {
 					const name = item.name.toLowerCase();
-					if (name.indexOf(profession) > -1) {
+					if (name.indexOf(profession.toLowerCase()) > -1) {
 						return true;
 					}
 					return false;
 				})
 			);
-		} 
+		} else {
+			setProfessions(arrayProfesesion);
+		}
 	}, [profession]);
 
 	return (
 		<S.ContainerModal
-			opacity={opacity}
 			zIndex={zIndex}
+			display={display}
+			opacity={opacity}
 		>
 			<S.AreaModal>
 				<S.IconClose 
 					onClick={
 						()=>{
 							setOpacity(0);
-							setZIndex(-100);
 						}
 					}
 				/>
 				<S.Input
 					type="text"
 					value={profession}
+					placeholder="Digite o processo seletivo"
 					onChange={(e) => setProfession(e.target.value)}
 				/>
 				{
@@ -92,14 +98,14 @@ export const ModalSelect: React.FC<IProps> = (
 									() => {
 										if (opacity === 1) {
 											setOpacity(0);
-											setZIndex(-100);
 											setId(profession.id);
 											setName(profession.name);
+											setZIndex(-100);
 										} else {
 											setOpacity(1);
-											setZIndex(0);
 											setId(profession.id);
 											setName(profession.name);
+											setZIndex(100);
 										}
 										setBtnText(profession.name);
 									}
