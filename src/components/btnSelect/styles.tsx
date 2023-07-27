@@ -1,15 +1,6 @@
 import styled from "styled-components";
 
-export const AuxAlign = styled.div`
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`;
-
-export const AreaButton = styled.div`
+export const AreaButton = styled.a`
     width: 100%;
     max-width: 20rem;
     height: 3.125rem;

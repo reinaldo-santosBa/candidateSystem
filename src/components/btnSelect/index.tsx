@@ -7,8 +7,9 @@ export const ButtonSelect: React.FC = () => {
 	const [opacity, setOpacity] = useState(0);
 	const [zIndex, setZIndex] = useState(0);
 	const [btnText, setBtnText] = useState("Escolha o processo seletivo");
+	
 	return (
-		<S.AuxAlign>
+		<>
 			<S.AreaButton
 				onClick={
 					() => {
@@ -31,6 +32,6 @@ export const ButtonSelect: React.FC = () => {
 				zIndex={zIndex}
 				setBtnText={setBtnText}
 			/>
-		</S.AuxAlign>
+		</>
 	);
 };
