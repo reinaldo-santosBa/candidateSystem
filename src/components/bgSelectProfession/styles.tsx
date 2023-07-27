@@ -16,5 +16,6 @@ export const BgOpacity = styled.div`
     background-color: rgba(0,0,0,0.5);
     display: flex;
     align-items: center;
+    justify-content: space-between;
     flex-direction: column;
 `;
