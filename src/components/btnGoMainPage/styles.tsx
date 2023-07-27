@@ -11,9 +11,7 @@ export const AreaBtnGoHome = styled.div`
     display: flex;
     align-items: center;
     padding: 0 1rem;
-    justify-content: center;
     margin-bottom: 3.125rem;
-    z-index: 100;
     &&:hover{
         border: 1px solid #096688;
     }
