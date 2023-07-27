@@ -5,5 +5,5 @@ export const Logo = styled.img`
     width: 100%;
     max-width: 9.375rem;
     max-height: 9.375rem;
-    margin-top: 50px;
+    margin-top: 3.125rem;
 `;
