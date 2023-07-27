@@ -22,10 +22,10 @@ export const AuthContextProvider: React.FC<IProvider> = ({ children }) => {
 			value={
 
 				{
-					id,
-					name,
-					setName,
-					setId
+					id: id,
+					name: name,
+					setName: setName,
+					setId: setId
 				}
 
 			}
