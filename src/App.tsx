@@ -4,11 +4,16 @@ import {
 	RouterProvider,
 } from "react-router-dom";
 import { SelectProfession } from "./pages/selectProfession";
+import { Home } from "./pages/home";
 
 export const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <SelectProfession/>
+	},
+	{
+		path: "/home/:id",
+		element: <Home/>
 	}
 ]);
 
