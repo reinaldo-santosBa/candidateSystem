@@ -7,6 +7,7 @@ export const AreaButton = styled.a`
     border-radius: 1rem;    
     background: #0b78a0;
     transition: all .3s  ease-in-out;
+    cursor:  pointer;
     display: flex;
     align-items: center;
     padding: 0 1rem;

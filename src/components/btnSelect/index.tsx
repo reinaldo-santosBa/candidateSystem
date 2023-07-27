@@ -7,6 +7,7 @@ export const ButtonSelect: React.FC = () => {
 	const [opacity, setOpacity] = useState(0);
 	const [zIndex, setZIndex] = useState(0);
 	const [btnText, setBtnText] = useState("Escolha o processo seletivo");
+	const [display,setDisplay] = useState("none");
 	
 	return (
 		<>
@@ -15,10 +16,12 @@ export const ButtonSelect: React.FC = () => {
 					() => {
 						if (opacity === 1) {
 							setOpacity(0);
+							setDisplay("none");
 							setZIndex(-100);
 						} else {
 							setOpacity(1);
-							setZIndex(0);
+							setDisplay("flex");
+							setZIndex(100);
 						}
 					}
 				}
@@ -26,6 +29,8 @@ export const ButtonSelect: React.FC = () => {
 				<p>{btnText}</p>
 			</S.AreaButton>
 			<ModalSelect
+				setDisplay={setDisplay}
+				display={display}
 				setOpacity={setOpacity}
 				opacity={opacity}
 				setZIndex={setZIndex}
