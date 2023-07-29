@@ -5,7 +5,7 @@ export const AreaBtnGoHome = styled.div`
     max-width: 20rem;
     height: 3.125rem;
     border-radius: 1rem;    
-    border: 2px solid #0b78a0;
+    background: #0b78a0;
     cursor: pointer;
     transition: all .3s  ease-in-out;
     display: flex;
@@ -13,11 +13,11 @@ export const AreaBtnGoHome = styled.div`
     padding: 0 1rem;
     margin-bottom: 3.125rem;
     &&:hover{
-        border: 1px solid #096688;
+        background: #096688;
     }
     .textBtn{
         font-size:1.3rem;
-        color: #0b78a0;
+        color: #FFF;
         text-decoration: none;
         width: 100%;
         height: 100%;
@@ -26,6 +26,6 @@ export const AreaBtnGoHome = styled.div`
         justify-content: center;
     }
     .textBtn:hover{
-        color: #096688;
+        color: #e1e1e1;
     }
 `;
