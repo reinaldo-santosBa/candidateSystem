@@ -38,16 +38,17 @@ export const AreaItems = styled.div`
         color: #FFF;
         font-size: 1.2rem;
         padding: 1rem;
-        cursor: pointer;
         transition: all .5s ease-in-out;
-        z-index: 100;
+        
     }
     .item.active{
         visibility: visible;
         opacity: 1;
+        cursor: pointer;
     }
     .item.disabled{
         visibility: hiden;
         opacity: 0;
+        pointer-events: none;
     }
 `;
