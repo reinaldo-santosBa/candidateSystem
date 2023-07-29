@@ -12,7 +12,7 @@ interface IArray {
 
 const Select: React.FC = () => {
 	const {
-		setId,
+		setIdProfession,
 	} = useContext(AuthContext);
 	const [active, setActive] = useState("disabled");
 	const [textCamp, setTextCamp] = useState("Escolha um processo seletivo");
@@ -27,7 +27,7 @@ const Select: React.FC = () => {
 			setRotate("rotate(270deg)");
 		}
 		setTextCamp(text);
-		setId(id);
+		setIdProfession(id);
 	};
 
 	return (
