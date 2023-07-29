@@ -5,22 +5,22 @@ interface IProvider {
 }
 
 interface IProps {
-    id: number;
-	setId: React.Dispatch<SetStateAction<number>>;
+	idProfession: number;
+	setIdProfession: React.Dispatch<SetStateAction<number>>;
 }
 
 export const AuthContext = createContext<IProps>({} as IProps);
 
 export const AuthContextProvider: React.FC<IProvider> = ({ children }) => {
-	const [id, setId] = useState(0);
+	const [idProfession, setIdProfession] = useState(0);
 	return (
 		<AuthContext.Provider
 
 			value={
 
 				{
-					id: id,
-					setId: setId,
+					idProfession: idProfession,
+					setIdProfession: setIdProfession,
 
 				}
 

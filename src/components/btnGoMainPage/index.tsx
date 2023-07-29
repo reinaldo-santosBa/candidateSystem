@@ -5,13 +5,13 @@ import { AuthContext } from "../../context/context";
 
 export const BtnGoMainPage: React.FC = () => {
 	const {
-		id,
+		idProfession,
 	} = useContext(AuthContext);
 	return (
 		<S.AreaBtnGoHome>
 			{
-				id > 0
-					? <Link className="textBtn" to={"/home/" + id}>Entrar</Link>
+				idProfession > 0
+					? <Link className="textBtn" to={"/home/" + idProfession}>Entrar</Link>
 					: <p className="textBtn" onClick={()=>alert("Escolha um processo seletivo")}>Entrar</p>
 			}
 		</S.AreaBtnGoHome>
