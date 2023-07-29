@@ -9,7 +9,11 @@ export const BtnGoMainPage: React.FC = () => {
 	} = useContext(AuthContext);
 	return (
 		<S.AreaBtnGoHome>
-			<Link className="textBtn" to={"/home/" + id}>Entrar</Link>
+			{
+				id > 0
+					? <Link className="textBtn" to={"/home/" + id}>Entrar</Link>
+					: <p className="textBtn" onClick={()=>alert("Escolha um processo seletivo")}>Entrar</p>
+			}
 		</S.AreaBtnGoHome>
 	);
 };
