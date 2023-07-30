@@ -17,7 +17,7 @@ export const AreaMenu = styled.nav<IMenuStyles>`
     width: 18.75rem;
     background-color: #0A0A0A;
     box-shadow: 1px 1px 1px #000;
-    position: relative;
+    position: absolute;
     top: 0;
     left: ${props => props.positionLeftMenu ? props.positionLeftMenu : 0 };
     transition: all 0.5s ease-in-out;
@@ -29,7 +29,7 @@ export const BtnOpenClose = styled.div <IbtnStyle>`
     position: absolute;
     top: 1.5rem;
     left: ${props => props.positionLeftBtn};
-    z-index: 100;
+    z-index: 1000;
     cursor: pointer;
     transition: all 0.5s ease-in-out;
 `;
