@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Container } from "../../components/container";
 import { Menu } from "../../components/menu";
 import { Logo } from "../../components/logo";
+import { ContentHome } from "../../components/ContentHome";
 
 export const Home: React.FC = () => {
 	const { id } = useParams();
@@ -12,9 +13,10 @@ export const Home: React.FC = () => {
 				idMenu={1}
 			>
 				<Logo/>
-				{id}
 			</Menu>
-			
+			<ContentHome
+				id={Number(id)}
+			/>
 		</Container>
 	);
 };
