@@ -37,7 +37,8 @@ export const  ContentArea = styled.div`
         position: absolute;
         width: auto;
         text-align: center;
-        background-color: #12121277;
+        border-radius: 1rem;
+        background-color: #121212;
         padding: 1rem;
     }
 
