@@ -11,7 +11,7 @@ export const arrayMenu = [
 		name: "Candidato",
 		subName: "Escolhido",
 		subMenu: [],
-		path: "/candidateChange"
+		path: "/SelectedCandidate"
 	},
 	{
 		id: 3,
