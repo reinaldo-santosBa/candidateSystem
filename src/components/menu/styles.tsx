@@ -13,6 +13,7 @@ export const AreaMenu = styled.nav<IMenuStyles>`
     min-height: 100vh;
     max-height: 100vh;
     overflow-y: auto;
+    
     overflow-x: hidden;
     width: 18.75rem;
     background-color: #0A0A0A;
@@ -28,6 +29,9 @@ export const AreaMenu = styled.nav<IMenuStyles>`
     &&::-webkit-scrollbar-thumb {
         background: #333;
     }
+    @media (max-width: 800px) {
+        position: fixed;
+    }
 `;
 
 export const BtnOpenClose = styled.div <IbtnStyle>`
@@ -39,6 +43,9 @@ export const BtnOpenClose = styled.div <IbtnStyle>`
     z-index: 1000;
     cursor: pointer;
     transition: all 0.5s ease-in-out;
+    @media (max-width: 800px) {
+        position: fixed;
+    }
 `;
 
 
@@ -87,6 +94,7 @@ export const  AreaItemBtn = styled.li`
     position: relative;
     justify-content: center;
     transition: all 0.5s ease-in-out;
+    
     &&:hover{ 
         a{
             color: #096688;
@@ -124,6 +132,7 @@ export const  AreaItemBtn = styled.li`
     .activeBtn{
         color: #096688;
     }
+    
 `;
 
 export const AreaItemSubBtn = styled.li`
