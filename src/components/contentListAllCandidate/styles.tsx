@@ -11,6 +11,7 @@ export const  ContentArea = styled.div`
     grid-gap: 2rem;
     align-items: center;
     .card{
+        text-decoration: none;
         width: auto;
         height: 22rem;
         padding: 2rem;

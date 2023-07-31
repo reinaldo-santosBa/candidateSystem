@@ -36,7 +36,7 @@ export const ContentHome: React.FC<IPropsContentHome> = ({id}) => {
 				return false;
 			})
 		);
-	}, [arrayCandidates]);
+	}, [id]);
 
 	const handleClickCard = (idCandidate: number) => {
 		setCandidatesSelects(

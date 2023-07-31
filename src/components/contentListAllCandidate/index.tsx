@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import * as S from "./styles";
 import { arrayCandidates } from "../../constant/arrayCandidates";
+import { Link } from "react-router-dom";
 
 interface ArrayCandidates {
 	id: number,
@@ -31,13 +32,7 @@ export const ContentListAllCandidate: React.FC<IPropsContentHome> = ({id}) => {
 				return false;
 			})
 		);
-	}, [arrayCandidates]);
-
-	const handleClickCard = (idCandidate: number) => {
-		console.log("====================================");
-		console.log(idCandidate);
-		console.log("====================================");
-	};
+	}, [id]);
 
 	return (
 		<>
@@ -45,20 +40,16 @@ export const ContentListAllCandidate: React.FC<IPropsContentHome> = ({id}) => {
 				{arrayListCandidate.map((item) => {
 
 					return (
-						<div
+						<Link
+							to={`/SelectedCandidate/${id}/${item.id}`}
 							className={"card"}
 							key={item.id}
-							onClick={
-								() => {
-									handleClickCard(item.id);
-								}
-							}
 						>
 							<S.ImgWrapper
 								image={`url(${item.image})`}
 							/>
 							<p>{item.name}</p>
-						</div>
+						</Link>
 					);
 				})}
 			</S.ContentArea>
