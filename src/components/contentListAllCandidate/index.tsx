@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import * as S from "./styles";
 import { arrayCandidates } from "../../constant/arrayCandidates";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../context/context";
 
 interface ArrayCandidates {
 	id: number,
@@ -15,7 +16,9 @@ interface IPropsContentHome {
 	id: number;
 }
 
-export const ContentListAllCandidate: React.FC<IPropsContentHome> = ({id}) => {
+export const ContentListAllCandidate: React.FC<IPropsContentHome> = ({ id }) => {
+	const { candidatesSelects, setCandidatesSelects } = useContext(AuthContext);
+
 	const [arrayListCandidate, setArrayListCandidate] = useState<ArrayCandidates[]>([{
 		id: 0,
 		name: "",
@@ -34,6 +37,18 @@ export const ContentListAllCandidate: React.FC<IPropsContentHome> = ({id}) => {
 		);
 	}, [id]);
 
+	const handleClickCard = (idCandidate: number) => {
+		setCandidatesSelects(
+			candidatesSelects.filter((item) => {
+				if (item.idProfession === id) {
+					item.idCandidate = idCandidate;
+				}
+				return true;
+			})
+		);
+	};
+
+
 	return (
 		<>
 			<S.ContentArea>
@@ -41,9 +56,14 @@ export const ContentListAllCandidate: React.FC<IPropsContentHome> = ({id}) => {
 
 					return (
 						<Link
-							to={`/SelectedCandidate/${id}/${item.id}`}
+							to={`/SelectedCandidate/${id}`}
 							className={"card"}
 							key={item.id}
+							onClick={
+								() => {
+									handleClickCard(item.id);
+								}
+							}
 						>
 							<S.ImgWrapper
 								image={`url(${item.image})`}
