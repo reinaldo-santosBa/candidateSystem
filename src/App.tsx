@@ -6,6 +6,7 @@ import {
 import { SelectProfession } from "./pages/selectProfession";
 import { Home } from "./pages/home";
 import { AllCandidates } from "./pages/allCandidates";
+import { SelectedCandidate } from "./pages/selectedCandidate";
 
 export const router = createBrowserRouter([
 	{
@@ -19,6 +20,10 @@ export const router = createBrowserRouter([
 	{
 		path: "/AllCandidates/:id",
 		element: <AllCandidates />
+	},
+	{
+		path: "/SelectedCandidate/:id",
+		element: <SelectedCandidate />
 	}
 ]);
 
