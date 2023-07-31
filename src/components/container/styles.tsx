@@ -7,4 +7,5 @@ export const Container = styled.div`
 
     background-color: #1E1E1E;
     overflow-x: auto;
+    overflow-y: none;
 `;

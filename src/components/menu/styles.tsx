@@ -22,6 +22,12 @@ export const AreaMenu = styled.nav<IMenuStyles>`
     z-index: 100;
     left: ${props => props.positionLeftMenu ? props.positionLeftMenu : 0 };
     transition: all 0.5s ease-in-out;
+    &&::-webkit-scrollbar {
+        background-color: #222;
+    }
+    &&::-webkit-scrollbar-thumb {
+        background: #333;
+    }
 `;
 
 export const BtnOpenClose = styled.div <IbtnStyle>`
