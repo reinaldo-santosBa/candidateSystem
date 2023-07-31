@@ -113,22 +113,28 @@ export const Menu: React.FC<IChildren> = ({ children,idMenu,idProfession }) => {
 											?
 											item.subMenu.map((subItem: ISubMenu) => {
 												return (
-													<S.AreaItemSubBtn
-													
+													<Link
+														className={"linkClass"}
 														key={subItem.id}
-														onClick={
-															() => {
-																setActiveSubMenu(subItem.id);
-																setIdProfession(subItem.id);
-															}
-														}
+														to={"/Home/" +subItem.id}
 													>
-														<a
-															className={activeSubMenu === subItem.id ? "activeBtn" : ""}
+														<S.AreaItemSubBtn
+													
+														
+															onClick={
+																() => {
+																	setActiveSubMenu(subItem.id);
+																	setIdProfession(subItem.id);
+																}
+															}
 														>
-															{subItem.name}
-														</a>
-													</S.AreaItemSubBtn>
+															<a
+																className={activeSubMenu === subItem.id ? "activeBtn" : ""}
+															>
+																{subItem.name}
+															</a>
+														</S.AreaItemSubBtn>
+													</Link>
 												);
 											})
 											: ""

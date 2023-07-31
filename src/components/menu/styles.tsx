@@ -40,6 +40,9 @@ export const AreaItem = styled.ul`
     height: auto;
     list-style: none;
     padding: 0;
+    .linkClass{
+        text-decoration: none !important;
+    }
 `;
 
 
