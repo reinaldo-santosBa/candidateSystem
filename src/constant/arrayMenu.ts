@@ -3,24 +3,28 @@ export const arrayMenu = [
 		id: 1,
 		name: "Home",
 		subName: "",
-		subMenu:[]
+		subMenu: [],
+		path: "/home"
 	},
 	{
 		id: 2,
 		name: "Candidato",
 		subName: "Escolhido",
-		subMenu: []
+		subMenu: [],
+		path: "/candidateChange"
 	},
 	{
 		id: 3,
 		name: "Todos",
 		subName: "Candidatos",
-		subMenu: []
+		subMenu: [],
+		path: "/AllCandidates"
 	},
 	{
 		id: 4,
 		name: "Processo",
 		subName: "Seletivo",
+		path: "/home",
 		subMenu: [
 			{
 				id: 1,
