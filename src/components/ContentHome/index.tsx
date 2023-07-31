@@ -49,7 +49,6 @@ export const ContentHome: React.FC<IPropsContentHome> = ({id}) => {
 			})
 		);
 	};
-
 	return (
 		<>
 			<S.BtnShuffle
