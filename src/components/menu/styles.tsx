@@ -107,6 +107,7 @@ export const  AreaItemBtn = styled.li`
         font-size: 1.5rem;
         letter-spacing: .4rem;
         text-align: center;
+        text-decoration: none;
     }
 
 

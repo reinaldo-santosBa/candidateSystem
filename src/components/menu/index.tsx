@@ -10,9 +10,11 @@ import {
 import {
 	FiMenu
 } from "react-icons/fi";
+import { Link } from "react-router-dom";
 interface IChildren {
 	children: React.ReactNode;
 	idMenu: number;
+	idProfession: number;
 }
 
 interface ISubMenu {
@@ -26,9 +28,10 @@ interface Iarray {
 	name: string;
 	subName: string;	
 	subMenu: ISubMenu[];
+	path: string;
 }
 
-export const Menu: React.FC<IChildren> = ({ children,idMenu }) => {
+export const Menu: React.FC<IChildren> = ({ children,idMenu,idProfession }) => {
 	const [active, setActive] = useState(idMenu);
 	const [activeSubMenu, setActiveSubMenu] = useState(0);
 	const [positionLeftMenu, setPositionLeftMenu] = useState("0");
@@ -77,22 +80,33 @@ export const Menu: React.FC<IChildren> = ({ children,idMenu }) => {
 									>
 										<div className={active === item.id ? "decorationSelected" : ""} />
 
-										<a
-											className={active === item.id ? "activeBtn" : ""}
-											onClick={
-												() => {
-													setActive(item.id);
-													if (item.subMenu.length === 0) {
-														setActiveSubMenu(0);
+										{
+											item.subMenu.length > 0
+												? < a
+													className={active === item.id ? "activeBtn" : ""}
+													onClick={
+														() => {
+															setActive(item.id);
+															if (item.subMenu.length === 0) {
+																setActiveSubMenu(0);
+															}
+														}	
 													}
-												}
-											}
-										>
-											{item.name}
-											<p>
-												{item.subName}
-											</p>
-										</a>
+											
+												>
+													{item.name}
+													<p>
+														{item.subName}
+													</p>
+												</a>
+												:
+												<Link to={`${item.path}/${idProfession}`} className={active === item.id ? "activeBtn" : ""}>
+													{item.name}
+													<p>
+														{item.subName}
+													</p>
+												</Link>
+										}
 									</S.AreaItemBtn>
 									{
 										active === item.id && item.subMenu.length > 0
