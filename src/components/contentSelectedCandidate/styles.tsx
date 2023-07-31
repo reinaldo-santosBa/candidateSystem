@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 interface IAreaselected {
     image: string;
@@ -66,10 +67,12 @@ interface IBtn {
     bgHover: string;
 }
 
-export const Btn = styled.button<IBtn>`
+export const Btn = styled(Link)<IBtn>`
     color: #FFF;
     text-transform: uppercase;
     padding: .5rem;
+    text-decoration: none;
+    text-align: center;
     outline: none;
     background: ${props => props.bg};
     border: none;

@@ -28,6 +28,10 @@ export const ContentSelectedCandidate: React.FC<IPropsContentSelectedCandidate> 
 		);
 	}, [id]);
 
+	const handleClickConfirm = (id: number) => {
+		arrayCandidates[id -1].selected = 1;
+	};
+
 	return (
 		<S.AreaSelected>
 			{
@@ -50,13 +54,22 @@ export const ContentSelectedCandidate: React.FC<IPropsContentSelectedCandidate> 
 								</div>
 								<div>
 									<S.Btn
+										to={"/home/" + id}
 										bg={"#333"}
 										bgHover={"#222"}
-									>Voltar</S.Btn>
+									>
+										Voltar
+									</S.Btn>
 									<S.Btn
+										to={"/home/" + id}
 										bg={"#00863c"}
 										bgHover={"#035327"}
-									>Confirmar</S.Btn>
+										onClick={() => {
+											handleClickConfirm(item.id);
+										}}
+									>
+										Confirmar
+									</S.Btn>
 								</div>
 							</S.DataArea>
 						</div>;
