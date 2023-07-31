@@ -19,6 +19,7 @@ export const AreaMenu = styled.nav<IMenuStyles>`
     box-shadow: 1px 1px 1px #000;
     position: absolute;
     top: 0;
+    z-index: 100;
     left: ${props => props.positionLeftMenu ? props.positionLeftMenu : 0 };
     transition: all 0.5s ease-in-out;
 `;

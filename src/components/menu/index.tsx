@@ -74,10 +74,8 @@ export const Menu: React.FC<IChildren> = ({ children,idMenu,idProfession }) => {
 					{
 						arrayMenu.map((item: Iarray) => {
 							return (
-								<>
-									<S.AreaItemBtn
-										key={item.id}
-									>
+								<div key={item.id}>
+									<S.AreaItemBtn>
 										<div className={active === item.id ? "decorationSelected" : ""} />
 
 										{
@@ -139,7 +137,7 @@ export const Menu: React.FC<IChildren> = ({ children,idMenu,idProfession }) => {
 											})
 											: ""
 									}
-								</>
+								</div>
 							);
 						})
 					}
