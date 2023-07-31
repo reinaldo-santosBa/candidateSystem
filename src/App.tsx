@@ -22,7 +22,7 @@ export const router = createBrowserRouter([
 		element: <AllCandidates />
 	},
 	{
-		path: "/SelectedCandidate/:id/:idCandidate",
+		path: "/SelectedCandidate/:id/",
 		element: <SelectedCandidate />
 	}
 ]);
