@@ -13,6 +13,7 @@ interface ICandidatesSelects {
 }
 export const ContentSelectedCandidate: React.FC<IPropsContentSelectedCandidate> = ({ id }) => {
 	const { candidatesSelects } = useContext(AuthContext);
+	let exists = false;
 	const [candidate, setCandidate] = useState <ICandidatesSelects[]>([{
 		idProfession: 0,
 		idCandidate: 0
@@ -37,7 +38,7 @@ export const ContentSelectedCandidate: React.FC<IPropsContentSelectedCandidate> 
 			{
 				arrayCandidates.map((item) => {
 					if (item.id === candidate[0].idCandidate ) {
-                        
+						exists = true;
 						return <div 
 							className="candidate"
 							key={candidate[0].idCandidate}        
@@ -75,8 +76,12 @@ export const ContentSelectedCandidate: React.FC<IPropsContentSelectedCandidate> 
 						</div>;
 					}
 					return "";
-                    
 				})
+			}
+			{
+				!exists 
+					? <S.Mensagem>Não foi escolhido um candidato</S.Mensagem>
+					: ""
 			}
 		</S.AreaSelected>
 	);

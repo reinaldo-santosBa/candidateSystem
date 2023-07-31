@@ -83,3 +83,10 @@ export const Btn = styled(Link)<IBtn>`
         background: ${props => props.bgHover};
     }
 `;
+
+export const Mensagem = styled.p`
+    font-size: 4rem;
+    color: #c76868;
+    text-transform: uppercase;
+    font-weight: bold;
+`;
